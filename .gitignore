@@ -3,3 +3,5 @@
 conf/ssl/domain.*
 eiblog
 static/*.*
+esdata/*
+mgodb/*

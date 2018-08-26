@@ -88,6 +88,7 @@ type Config struct {
 		BTitle    string
 		Copyright string
 	}
+	Baidu string
 }
 
 func init() {

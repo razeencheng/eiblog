@@ -12,12 +12,12 @@ install:
   - go mod download
 script:
   - GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build                      # 编译版本
-  - docker build -t registry.cn-hangzhou.aliyuncs.com/deepzz/eiblog .   # 构建镜像
+  - docker build -t registry.cn-hangzhou.aliyuncs.com/razeen/eiblog .   # 构建镜像
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" registry.cn-hangzhou.aliyuncs.com
-  - docker push registry.cn-hangzhou.aliyuncs.com/deepzz/eiblog
-  - docker tag registry.cn-hangzhou.aliyuncs.com/deepzz/eiblog registry.cn-hangzhou.aliyuncs.com/deepzz/eiblog:$TRAVIS_TAG
-  - docker push registry.cn-hangzhou.aliyuncs.com/deepzz/eiblog:$TRAVIS_TAG
+  - docker push registry.cn-hangzhou.aliyuncs.com/razeen/eiblog
+  - docker tag registry.cn-hangzhou.aliyuncs.com/razeen/eiblog registry.cn-hangzhou.aliyuncs.com/razeen/eiblog:$TRAVIS_TAG
+  - docker push registry.cn-hangzhou.aliyuncs.com/razeen/eiblog:$TRAVIS_TAG
 before_deploy:
    - ./dist.sh
 deploy:

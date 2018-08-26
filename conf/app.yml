@@ -48,6 +48,7 @@ disqus:
   # 获取评论数量间隔
   interval: 5
 # 谷歌统计
+baidu: xxxxx
 google:
   url: https://www.google-analytics.com/collect
   tid: UA-xxxxxx-1

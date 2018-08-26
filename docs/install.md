@@ -12,7 +12,7 @@ $ git clone https://github.com/eiblog/eiblog.git
 
 3、如果你对 `docker` 技术也有研究的话，你也可以通过 `docker` 来安装：
 ``` sh
-$ docker pull registry.cn-hangzhou.aliyuncs.com/deepzz/eiblog:v1.2.0
+$ docker pull registry.cn-hangzhou.aliyuncs.com/razeen/eiblog:v1.2.0
 ```
 `注意`，镜像内部没有提供 conf 文件夹内的配置内容，因为该内容定制化的需求过高。所以需要将 `conf` 目录映射出来，后面会具体说到。
 
@@ -164,7 +164,7 @@ $ tree /data/eiblog -L 1
 然后，将镜像 PULL 到服务器本地。
 ``` sh
 # PULL下Eiblog镜像
-$ docker pull registry.cn-hangzhou.aliyuncs.com/deepzz/eiblog
+$ docker pull registry.cn-hangzhou.aliyuncs.com/razeen/eiblog
 ```
 
 最后，执行 `docker run` 命令，希望你能成功。
@@ -177,7 +177,7 @@ $ docker run -d --name eiblog --restart=always \
     -e GODEBUG=netdns=cgo \
     -v /data/eiblog/logdata:/eiblog/logdata \
     -v /data/eiblog/conf:/eiblog/conf \
-    registry.cn-hangzhou.aliyuncs.com/deepzz/eiblog
+    registry.cn-hangzhou.aliyuncs.com/razeen/eiblog
 ```
 这里默认 `MongDB` 和 `Elasticsearch` 均为 `docker` 部署，且名称为`eidb`，`eisearch`。
 
