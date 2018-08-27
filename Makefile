@@ -15,10 +15,10 @@ test:
 build:
 	@echo "go build..."
 	@CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build && \
-		docker build -t $(docker_registry)/razeen/eiblog:latest .
+		docker build -t razeencheng/eiblog:v1.4.4.E .
 
 deploy:build
-	@docker push $(docker_registry)/razeen/eiblog:latest
+	@docker push razeencheng/eiblog:v1.4.4.E
 
 dist:
 	@./dist.sh
